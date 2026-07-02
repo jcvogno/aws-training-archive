@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS 교육 자료 - 전체 Archive (2022~2026)</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:#f5f7fa;color:#333;line-height:1.6}
+.header{background:linear-gradient(135deg,#232f3e,#37475a);color:#fff;padding:2rem;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.header h1{font-size:1.8rem;margin-bottom:.3rem}
+.header p{opacity:.8;font-size:.9rem}
+.container{max-width:1200px;margin:0 auto;padding:2rem}
+.tabs{display:flex;gap:0;margin-bottom:1.5rem;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.tab{flex:1;padding:.9rem 1rem;text-align:center;cursor:pointer;font-weight:600;font-size:1rem;transition:all .2s;background:#fff;color:#37475a;border:none}
+.tab:hover{background:#f0f4f8}
+.tab.active{background:#ff9900;color:#fff}
+.tab .tab-count{display:block;font-size:.75rem;font-weight:normal;opacity:.8;margin-top:.2rem}
+.stats{display:flex;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.stat-card{background:#fff;border-radius:8px;padding:1rem 1.5rem;flex:1;min-width:120px;box-shadow:0 2px 8px rgba(0,0,0,.08);text-align:center}
+.stat-card .num{font-size:2rem;font-weight:bold;color:#ff9900}
+.stat-card .lbl{font-size:.85rem;color:#666}
+.search-box{margin-bottom:1.5rem}
+.search-box input{width:100%;padding:1rem 1.2rem;border:2px solid #e0e0e0;border-radius:8px;font-size:1rem;transition:border-color .3s}
+.search-box input:focus{outline:none;border-color:#ff9900}
+.folder-section{background:#fff;border-radius:12px;margin-bottom:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,.08);overflow:hidden}
+.folder-hdr{background:linear-gradient(135deg,#232f3e,#37475a);color:#fff;padding:1rem 1.5rem;cursor:pointer;display:flex;align-items:center;gap:.75rem;user-select:none}
+.folder-hdr:hover{background:linear-gradient(135deg,#2c3a4d,#445566)}
+.folder-hdr .ttl{flex:1;font-weight:600;font-size:1.05rem}
+.folder-hdr .cnt{background:#ff9900;padding:.15rem .6rem;border-radius:12px;font-size:.8rem;font-weight:bold}
+.folder-hdr .tgl{font-size:1.2rem;transition:transform .3s}
+.folder-hdr.closed .tgl{transform:rotate(-90deg)}
+.folder-body{overflow:hidden;transition:max-height .4s ease}
+.folder-body.closed{max-height:0!important}
+.file-item{display:flex;align-items:center;padding:.6rem 1.5rem;gap:.75rem;border-bottom:1px solid #f0f0f0;transition:background .2s}
+.file-item:hover{background:#f8f9fa}
+.file-item:last-child{border-bottom:none}
+.file-icon{font-size:1.1rem;width:1.8rem;text-align:center;flex-shrink:0}
+.file-info{flex:1;min-width:0}
+.file-name{color:#0073bb;text-decoration:none;font-weight:500;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.file-name:hover{color:#ff9900;text-decoration:underline}
+.file-meta{font-size:.75rem;color:#888;margin-top:.15rem}
+.file-size{background:#eef;color:#556;padding:.1rem .4rem;border-radius:4px;font-size:.75rem;white-space:nowrap}
+.subfolder{margin:.5rem 1rem;border:1px solid #e8e8e8;border-radius:8px;overflow:hidden}
+.subfolder-hdr{background:#f0f4f8;padding:.6rem 1rem;cursor:pointer;display:flex;align-items:center;gap:.5rem;font-weight:600;color:#37475a;user-select:none;font-size:.95rem}
+.subfolder-hdr:hover{background:#e4ecf4}
+.subfolder-body{overflow:hidden;transition:max-height .3s ease}
+.subfolder-body.closed{max-height:0!important}
+.badge{display:inline-block;padding:.1rem .35rem;border-radius:3px;font-size:.65rem;font-weight:bold;text-transform:uppercase;margin-left:.5rem}
+.b-pdf{background:#ffe0e0;color:#c00}
+.b-video{background:#e0f0ff;color:#06c}
+.b-doc{background:#e0ffe0;color:#060}
+.b-sheet{background:#f0e0ff;color:#609}
+.b-ppt{background:#fff0e0;color:#c60}
+.b-other{background:#f0f0f0;color:#666}
+#noResults{display:none;text-align:center;padding:3rem;color:#888;font-size:1.2rem}
+.year-panel{display:none}
+.year-panel.active{display:block}
+.loading{text-align:center;padding:3rem;color:#888;font-size:1.1rem}
+@media(max-width:768px){.container{padding:1rem}.header h1{font-size:1.3rem}.stats{flex-direction:column}.file-item{padding:.5rem 1rem}.file-size{display:none}.tabs{flex-wrap:wrap}.tab{min-width:45%}}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>📚 AWS 교육 자료 - 전체 Archive</h1>
+<p>2022~2026 AWS 교육, 세미나, 워크숍 발표 자료 모음</p>
+</div>
+<div class="container">
+<div class="tabs" id="tabs">
+<div class="tab active" data-year="2022">2022<span class="tab-count"></span></div>
+<div class="tab" data-year="2023">2023<span class="tab-count"></span></div>
+<div class="tab" data-year="2024">2024<span class="tab-count"></span></div>
+<div class="tab" data-year="2025">2025<span class="tab-count"></span></div>
+<div class="tab" data-year="2026">2026<span class="tab-count"></span></div>
+</div>
+<div class="stats" id="stats"></div>
+<div class="search-box"><input type="text" id="searchInput" placeholder="🔍 파일명으로 검색하세요..."></div>
+<div id="panels">
+<div class="year-panel active" id="panel-2022"><div class="loading">로딩 중...</div></div>
+<div class="year-panel" id="panel-2023"><div class="loading">로딩 중...</div></div>
+<div class="year-panel" id="panel-2024"><div class="loading">로딩 중...</div></div>
+<div class="year-panel" id="panel-2025"><div class="loading">로딩 중...</div></div>
+<div class="year-panel" id="panel-2026"><div class="loading">로딩 중...</div></div>
+</div>
+<div id="noResults">검색 결과가 없습니다.</div>
+</div>
+<script src="aws-training-2022-data.js"></script>
+<script>var DATA_2022 = DATA;</script>
+<script src="aws-training-2023-data.js"></script>
+<script>var DATA_2023 = DATA;</script>
+<script src="aws-training-2024-data.js"></script>
+<script>var DATA_2024 = DATA;</script>
+<script src="aws-training-2025-data.js"></script>
+<script>var DATA_2025 = DATA;</script>
+<script src="aws-training-2026-data.js"></script>
+<script>var DATA_2026 = DATA;</script>
+<script>
+(function(){
+var datasets = {2022:DATA_2022, 2023:DATA_2023, 2024:DATA_2024, 2025:DATA_2025, 2026:DATA_2026};
+var currentYear = '2022';
+
+function formatSize(b){if(!b||b===0)return '';if(b<1024)return b+' B';if(b<1048576)return(b/1024).toFixed(1)+' KB';if(b<1073741824)return(b/1048576).toFixed(1)+' MB';return(b/1073741824).toFixed(1)+' GB'}
+function getFileIcon(m){if(!m)return'📄';if(m.includes('pdf'))return'📕';if(m.includes('video')||m.includes('quicktime'))return'🎬';if(m.includes('presentation')||m.includes('slides'))return'📊';if(m.includes('spreadsheet')||m.includes('sheet'))return'📗';if(m.includes('document')||m.includes('word'))return'📘';return'📄'}
+function getTypeBadge(m){if(!m)return['기타','b-other'];if(m.includes('pdf'))return['PDF','b-pdf'];if(m.includes('video')||m.includes('quicktime'))return['VIDEO','b-video'];if(m.includes('presentation')||m.includes('slides'))return['PPT','b-ppt'];if(m.includes('spreadsheet')||m.includes('sheet'))return['EXCEL','b-sheet'];if(m.includes('document')||m.includes('word'))return['DOC','b-doc'];return['기타','b-other']}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+function countFiles(node){var c={total:0,pdf:0,video:0,ppt:0,folders:0};if(!node.children)return c;node.children.forEach(function(ch){if(ch.type==='folder'){c.folders++;var s=countFiles(ch);c.total+=s.total;c.pdf+=s.pdf;c.video+=s.video;c.ppt+=s.ppt;c.folders+=s.folders}else{c.total++;if(ch.mimeType){if(ch.mimeType.includes('pdf'))c.pdf++;if(ch.mimeType.includes('video')||ch.mimeType.includes('quicktime'))c.video++;if(ch.mimeType.includes('presentation')||ch.mimeType.includes('slides'))c.ppt++}}});return c}
+
+function renderFile(f){var icon=getFileIcon(f.mimeType),badge=getTypeBadge(f.mimeType),size=formatSize(f.size);var h='<div class="file-item" data-name="'+esc(f.name)+'">';h+='<span class="file-icon">'+icon+'</span><div class="file-info">';h+='<a class="file-name" href="'+esc(f.url||'')+'" target="_blank" title="'+esc(f.name)+'">'+esc(f.name)+'</a>';h+='<div class="file-meta"><span class="badge '+badge[1]+'">'+badge[0]+'</span>';if(size)h+=' &nbsp; '+size;h+='</div></div></div>';return h}
+
+function renderSubfolder(folder){var h='<div class="subfolder"><div class="subfolder-hdr" onclick="toggleSub(this)"><span>📂</span><span style="flex:1">'+esc(folder.name)+'</span><span class="tgl">▼</span></div><div class="subfolder-body">';if(folder.children)folder.children.forEach(function(ch){h+=ch.type==='folder'?renderSubfolder(ch):renderFile(ch)});h+='</div></div>';return h}
+
+function renderSection(folder,i){var fc=countFiles(folder).total;var h='<div class="folder-section"><div class="folder-hdr" onclick="toggleSection(this)"><span class="icon">📁</span><span class="ttl">'+esc(folder.name)+'</span><span class="cnt">'+fc+' files</span><span class="tgl">▼</span></div><div class="folder-body">';if(folder.children)folder.children.forEach(function(ch){h+=ch.type==='folder'?renderSubfolder(ch):renderFile(ch)});h+='</div></div>';return h}
+
+function renderYear(year){
+var data=datasets[year];if(!data)return;
+var panel=document.getElementById('panel-'+year);
+var counts=countFiles(data);
+var children=(data.children||[]).slice().sort(function(a,b){return a.name.localeCompare(b.name,'ko')});
+var html='';children.forEach(function(ch,i){if(ch.type==='folder')html+=renderSection(ch,i)});
+panel.innerHTML=html;
+// Update stats
+document.getElementById('stats').innerHTML='<div class="stat-card"><div class="num">'+counts.folders+'</div><div class="lbl">폴더</div></div><div class="stat-card"><div class="num">'+counts.total+'</div><div class="lbl">파일</div></div><div class="stat-card"><div class="num">'+counts.pdf+'</div><div class="lbl">PDF</div></div><div class="stat-card"><div class="num">'+counts.video+'</div><div class="lbl">동영상</div></div><div class="stat-card"><div class="num">'+counts.ppt+'</div><div class="lbl">PPT</div></div>';
+}
+
+// Tab counts
+Object.keys(datasets).forEach(function(y){
+var c=countFiles(datasets[y]);
+var tab=document.querySelector('.tab[data-year="'+y+'"] .tab-count');
+if(tab)tab.textContent=c.total+' files';
+});
+
+// Init first tab
+renderYear('2022');
+
+// Tab switching
+document.getElementById('tabs').addEventListener('click',function(e){
+var tab=e.target.closest('.tab');if(!tab)return;
+document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});
+tab.classList.add('active');
+var year=tab.getAttribute('data-year');
+currentYear=year;
+document.querySelectorAll('.year-panel').forEach(function(p){p.classList.remove('active')});
+document.getElementById('panel-'+year).classList.add('active');
+renderYear(year);
+// Clear search
+document.getElementById('searchInput').value='';
+resetSearch();
+});
+
+// Search
+var searchInput=document.getElementById('searchInput');
+function resetSearch(){
+var panel=document.getElementById('panel-'+currentYear);
+panel.querySelectorAll('.folder-section').forEach(function(s){s.style.display=''});
+panel.querySelectorAll('.file-item').forEach(function(f){f.style.display=''});
+panel.querySelectorAll('.subfolder').forEach(function(f){f.style.display=''});
+document.getElementById('noResults').style.display='none';
+}
+searchInput.addEventListener('input',function(){
+var q=this.value.toLowerCase().trim();
+var panel=document.getElementById('panel-'+currentYear);
+if(!q){resetSearch();return}
+var sections=panel.querySelectorAll('.folder-section');
+var anyVisible=false;
+sections.forEach(function(section){
+var files=section.querySelectorAll('.file-item');
+var sectionVisible=false;
+files.forEach(function(file){
+var name=(file.getAttribute('data-name')||'').toLowerCase();
+if(name.includes(q)){file.style.display='';sectionVisible=true}else{file.style.display='none'}
+});
+var sfs=section.querySelectorAll('.subfolder');
+sfs.forEach(function(sf){
+var hasVis=false;sf.querySelectorAll('.file-item').forEach(function(f){if(f.style.display!=='none')hasVis=true});
+sf.style.display=hasVis?'':'none';
+});
+section.style.display=sectionVisible?'':'none';
+if(sectionVisible){anyVisible=true;section.querySelector('.folder-body').classList.remove('closed');section.querySelector('.folder-hdr').classList.remove('closed')}
+});
+document.getElementById('noResults').style.display=anyVisible?'none':'block';
+});
+})();
+function toggleSection(el){el.classList.toggle('closed');el.nextElementSibling.classList.toggle('closed')}
+function toggleSub(el){var b=el.nextElementSibling;b.classList.toggle('closed');var t=el.querySelector('.tgl');if(t)t.textContent=b.classList.contains('closed')?'▶':'▼'}
+</script>
+</body>
+</html>
