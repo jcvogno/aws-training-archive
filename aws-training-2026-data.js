@@ -6,6 +6,51 @@
   "url": "https://drive.google.com/drive/folders/1eZkAUsTu4bWMYXEwslimUGG68uBvZpga",
   "children": [
     {
+      "name": "170. ATX Composability (26.07.07)",
+      "path": "0. 2026년 Archive/170. ATX Composability (26.07.07)",
+      "type": "folder",
+      "id": "1X0U-4sceAS3URqWcwqnt95HGYdUO-Lcf",
+      "url": "https://drive.google.com/drive/folders/1X0U-4sceAS3URqWcwqnt95HGYdUO-Lcf",
+      "children": [
+        {
+          "name": "Composability (Build) for AWS Transform - Funding Benefit and Fund Request Submission Guide 2026.pdf",
+          "type": "file",
+          "id": "1ynqgQGXp0-Yvl3azBkoGGAOiA5dn6dwk",
+          "url": "https://drive.google.com/file/d/1ynqgQGXp0-Yvl3azBkoGGAOiA5dn6dwk/view?usp=drivesdk",
+          "mimeType": "application/pdf",
+          "size": 219489,
+          "lastUpdated": "2026-07-07T03:17:54.000Z"
+        },
+        {
+          "name": "AWS Transform Composability Overview - May 2026.pdf",
+          "type": "file",
+          "id": "1_UtVys_vKTwpwBjNzpx2T-gjqYpKR72R",
+          "url": "https://drive.google.com/file/d/1_UtVys_vKTwpwBjNzpx2T-gjqYpKR72R/view?usp=drivesdk",
+          "mimeType": "application/pdf",
+          "size": 705924,
+          "lastUpdated": "2026-07-07T03:17:44.000Z"
+        }
+      ]
+    },
+    {
+      "name": "169. Agentic MSP Training (26.07.03)",
+      "path": "0. 2026년 Archive/169. Agentic MSP Training (26.07.03)",
+      "type": "folder",
+      "id": "1Qhe2ZFoKcIL5GXPMEzR42bJ4eeiOMMh9",
+      "url": "https://drive.google.com/drive/folders/1Qhe2ZFoKcIL5GXPMEzR42bJ4eeiOMMh9",
+      "children": [
+        {
+          "name": "Agentic MSP Training Series Session (26.07.03)",
+          "type": "file",
+          "id": "1eU04OoquTk_BCkh4Q5h3C940NWrjIAA5aL7srLgCONc",
+          "url": "https://docs.google.com/document/d/1eU04OoquTk_BCkh4Q5h3C940NWrjIAA5aL7srLgCONc/edit?usp=drivesdk",
+          "mimeType": "application/vnd.google-apps.document",
+          "size": 22229696,
+          "lastUpdated": "2026-07-03T01:37:06.153Z"
+        }
+      ]
+    },
+    {
       "name": "168. Commercial DB Migration Initiative",
       "path": "0. 2026년 Archive/168. Commercial DB Migration Initiative",
       "type": "folder",
